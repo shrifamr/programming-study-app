@@ -28,6 +28,7 @@
           <button class="nav-item active" data-view="lessons">الدروس</button>
           <button class="nav-item" data-view="lab">معمل الأمثلة</button>
           <button class="nav-item" data-view="quiz">اختبار MCQ</button>
+          <button class="nav-item" data-view="doctor">أسئلة الدكتور</button>
           <button class="nav-item" data-view="sheet">ورقة المراجعة</button>
         </nav>
 
@@ -97,6 +98,35 @@
               <div class="quiz-actions">
                 <button id="prevQuestion" class="secondary-btn">السابق</button>
                 <button id="nextQuestion" class="primary-btn">التالي</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="doctor">
+          <div class="quiz-shell">
+            <div class="quiz-header">
+              <div>
+                <p class="eyebrow">Doctor Questions</p>
+                <h2>أسئلة الدكتور من المحاضرات</h2>
+              </div>
+              <div class="score-pill">
+                <span id="doctorScoreText">0 / 0</span>
+                <small><span id="doctorQuestionCount">0</span> سؤال</small>
+              </div>
+            </div>
+            <div class="quiz-card doctor-card">
+              <div class="quiz-meta">
+                <span id="doctorQuestionNumber"></span>
+                <span id="doctorTopic"></span>
+              </div>
+              <h3 id="doctorQuestionText"></h3>
+              <pre id="doctorQuestionCode" class="code-block hidden"></pre>
+              <div id="doctorAnswers" class="answers"></div>
+              <div id="doctorFeedback" class="feedback hidden"></div>
+              <div class="quiz-actions">
+                <button id="prevDoctorQuestion" class="secondary-btn">السابق</button>
+                <button id="nextDoctorQuestion" class="primary-btn">التالي</button>
               </div>
             </div>
           </div>

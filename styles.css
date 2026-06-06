@@ -355,6 +355,20 @@ h2 {
   font-weight: 800;
 }
 
+.score-pill {
+  flex-direction: column;
+  justify-content: center;
+  min-width: 94px;
+  min-height: 52px;
+  gap: 2px;
+}
+
+.score-pill small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
 .lesson-panel p {
   color: var(--muted);
   line-height: 1.8;
@@ -469,6 +483,10 @@ h2 {
 
 .quiz-card {
   padding: 24px;
+}
+
+.doctor-card {
+  border-top: 4px solid var(--blue);
 }
 
 .answers {

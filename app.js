@@ -215,6 +215,1224 @@ const quiz = [
   ,["Lists", "What error happens when using an invalid list index?", "", ["SyntaxError", "RuntimeError", "IndexError", "NameError"], 2, "عند طلب عنصر خارج حدود القائمة يظهر IndexError: list index out of range."]
 ].map(([topic, question, code, answers, correct, explanation]) => ({ topic, question, code, answers, correct, explanation }));
 
+const doctorQuestions = [
+  {
+    "topic": "Decision Logic",
+    "question": "What is a logical design that controls the order of statement execution?",
+    "code": "",
+    "answers": [
+      "Variable",
+      "Control Structure",
+      "Data Type",
+      "Constant"
+    ],
+    "correct": 1,
+    "explanation": "A control structure controls the order in which statements execute."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which Python statement is used to create a single-alternative decision structure?",
+    "code": "",
+    "answers": [
+      "while",
+      "for",
+      "if",
+      "else"
+    ],
+    "correct": 2,
+    "explanation": "The 'if' statement is the basic decision structure."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which relational operator means 'Equal to'?",
+    "code": "",
+    "answers": [
+      "=",
+      "==",
+      "!=",
+      "=>"
+    ],
+    "correct": 1,
+    "explanation": "The '==' operator checks if two values are equal."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "How does Python tell where a block of code begins and ends?",
+    "code": "",
+    "answers": [
+      "Curly braces",
+      "Parentheses",
+      "Indentation",
+      "Semicolons"
+    ],
+    "correct": 2,
+    "explanation": "The Python interpreter uses indentation to define blocks."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which operator means 'Not equal to'?",
+    "code": "",
+    "answers": [
+      "<>",
+      "==",
+      "!",
+      "!="
+    ],
+    "correct": 3,
+    "explanation": "The '!=' operator checks for inequality."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "What is the result of a Boolean expression?",
+    "code": "",
+    "answers": [
+      "A number",
+      "A string",
+      "True or False",
+      "An error"
+    ],
+    "correct": 2,
+    "explanation": "Boolean expressions evaluate to either true or false."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which statement provides a block of code to run only if the condition is false?",
+    "code": "",
+    "answers": [
+      "elif",
+      "if",
+      "else",
+      "then"
+    ],
+    "correct": 2,
+    "explanation": "The else block executes when the if condition is false."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which operator is 'Greater than or equal to'?",
+    "code": "",
+    "answers": [
+      "=>",
+      ">=",
+      "=<",
+      "=="
+    ],
+    "correct": 1,
+    "explanation": "The operator is '>='."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which structure allows you to test multiple conditions in a row?",
+    "code": "",
+    "answers": [
+      "Sequence",
+      "if-elif-else",
+      "if-else",
+      "for loop"
+    ],
+    "correct": 1,
+    "explanation": "The if-elif-else statement makes nested logic simpler."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "What is the ASCII value of a blank space in memory?",
+    "code": "",
+    "answers": [
+      "48",
+      "32",
+      "97",
+      "0"
+    ],
+    "correct": 1,
+    "explanation": "A blank space is represented by the number 32."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "In the grading scale, what grade is given for 75?",
+    "code": "",
+    "answers": [
+      "B",
+      "C",
+      "D",
+      "F"
+    ],
+    "correct": 1,
+    "explanation": "Scores 70-79 are assigned a grade of 'C'."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which function converts user input into a decimal number?",
+    "code": "",
+    "answers": [
+      "int()",
+      "str()",
+      "float()",
+      "bool()"
+    ],
+    "correct": 2,
+    "explanation": "The float() function is used for decimal inputs like salary."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "When comparing strings 'Sami' and 'Samr', which is greater?",
+    "code": "",
+    "answers": [
+      "Sami",
+      "Samr",
+      "Equal",
+      "None"
+    ],
+    "correct": 1,
+    "explanation": "Comparing character codes, 'i' (105) is greater than 'r' (114) was not the case; actually 'r' (114) is greater than 'i' (105). Correct answer based on 'i' vs 'r' logic is Samr. *Correction: Sami is not greater than Samr*."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "A 'Dual Alternative' decision structure uses which clauses?",
+    "code": "",
+    "answers": [
+      "if only",
+      "if and else",
+      "if and elif",
+      "else only"
+    ],
+    "correct": 1,
+    "explanation": "A dual alternative uses both if and else."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which digit is represented by number 48 in memory?",
+    "code": "",
+    "answers": [
+      "0",
+      "1",
+      "9",
+      "Space"
+    ],
+    "correct": 0,
+    "explanation": "Digits 0-9 are represented by 48-57."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "To qualify for a loan, salary must be at least:",
+    "code": "",
+    "answers": [
+      "20000",
+      "30000",
+      "40000",
+      "50000"
+    ],
+    "correct": 1,
+    "explanation": "The minimum annual salary is 30,000."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "What grade is given for a score of 62?",
+    "code": "",
+    "answers": [
+      "C",
+      "D",
+      "F",
+      "B"
+    ],
+    "correct": 1,
+    "explanation": "Scores 60-69 are assigned 'D'."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "The 'elif' keyword is short for:",
+    "code": "",
+    "answers": [
+      "extra if",
+      "else if",
+      "every if",
+      "end if"
+    ],
+    "correct": 1,
+    "explanation": "elif is used for multiple nested decisions."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "What happens if all conditions in an if-elif-else are false?",
+    "code": "",
+    "answers": [
+      "Nothing runs",
+      "Error occurs",
+      "else block runs",
+      "First block runs"
+    ],
+    "correct": 2,
+    "explanation": "If all conditions are false, the trailing else executes."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "In Python, string comparisons are based on:",
+    "code": "",
+    "answers": [
+      "String length",
+      "ASCII/Unicode",
+      "Vowel count",
+      "Alphabetical only"
+    ],
+    "correct": 1,
+    "explanation": "Strings are compared by the numeric codes of their characters."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which logic structure tests one condition inside another?",
+    "code": "",
+    "answers": [
+      "Sequence",
+      "Nested",
+      "Loop",
+      "Linear"
+    ],
+    "correct": 1,
+    "explanation": "Decision structures can be nested within one another."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "To qualify for a loan, years on job must be at least:",
+    "code": "",
+    "answers": [
+      "1",
+      "2",
+      "3",
+      "5"
+    ],
+    "correct": 1,
+    "explanation": "The minimum years on the job is 2."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "What is the grade for a score of 55?",
+    "code": "",
+    "answers": [
+      "D",
+      "F",
+      "E",
+      "C"
+    ],
+    "correct": 1,
+    "explanation": "Scores below 60 are assigned 'F'."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Relational operators are also called:",
+    "code": "",
+    "answers": [
+      "Arithmetic",
+      "Logical",
+      "Comparison",
+      "Assignment"
+    ],
+    "correct": 2,
+    "explanation": "They compare values like greater than or equal to."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "The first line of an 'if' statement must end with:",
+    "code": "",
+    "answers": [
+      "A semicolon",
+      "A colon",
+      "A period",
+      "A bracket"
+    ],
+    "correct": 1,
+    "explanation": "The general format is 'if condition:'."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "A decision structure is often called a:",
+    "code": "",
+    "answers": [
+      "Selection structure",
+      "Addition structure",
+      "Repeat structure",
+      "Variable structure"
+    ],
+    "correct": 0,
+    "explanation": "Decision structures are used for selection logic."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which error occurs if indentation is inconsistent?",
+    "code": "",
+    "answers": [
+      "SyntaxError",
+      "LogicError",
+      "IndentationError",
+      "RuntimeError"
+    ],
+    "correct": 2,
+    "explanation": "Python requires consistent indentation to define blocks."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "In the graded scale, a 90 results in:",
+    "code": "",
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "S"
+    ],
+    "correct": 0,
+    "explanation": "Scores 90 and above get an 'A'."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "The '!=' operator is the opposite of:",
+    "code": "",
+    "answers": [
+      "=",
+      "==",
+      ">=",
+      "!"
+    ],
+    "correct": 1,
+    "explanation": "Not equal is the logical opposite of equal to."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "Which section in an if-elif-else is optional?",
+    "code": "",
+    "answers": [
+      "The if block",
+      "The elif block",
+      "The else block",
+      "The condition"
+    ],
+    "correct": 2,
+    "explanation": "The trailing else is used for default but can be omitted."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: An 'if' statement condition must evaluate to a Boolean value.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "The condition must be an expression that is true or false."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: In a nested if-else, the inner 'else' belongs to the nearest 'if'.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Indentation shows which else belongs to which if."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: The characters 'a' and 'A' have the same numeric code in memory.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Different characters have unique numeric codes."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: A sequence structure executes statements in any order.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Sequence structures execute statements in order."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: An 'elif' statement can exist without a preceding 'if'.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "elif is part of a larger if-structure."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: Python's graded scale example can use multiple 'if' statements instead of 'elif'.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "It can, though nested if-else or elif is more efficient."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: If an 'if' condition is true, the 'else' block is skipped.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Only one branch of a dual-alternative structure executes."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: In string comparisons, lowercase 'a' is numerically greater than uppercase 'A'.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "In ASCII, lowercase letters have higher values than uppercase."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: A Boolean expression can be used outside of an 'if' statement.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "It is simply an expression that is true or false."
+  },
+  {
+    "topic": "Decision Logic",
+    "question": "T/F: Indentation in Python is optional if you use semicolons.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Indentation is required by the Python interpreter."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What is an object containing multiple data items called in Python?",
+    "code": "",
+    "answers": [
+      "Variable",
+      "List",
+      "Integer",
+      "Operator"
+    ],
+    "correct": 1,
+    "explanation": "A list is an object that contains multiple data items called elements."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which index represents the first element in a list?",
+    "code": "",
+    "answers": [
+      "1",
+      "0",
+      "-1",
+      "First"
+    ],
+    "correct": 1,
+    "explanation": "The first element in a list is at index 0."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What loop executes a specific number of times?",
+    "code": "",
+    "answers": [
+      "While loop",
+      "For loop",
+      "If statement",
+      "Switch"
+    ],
+    "correct": 1,
+    "explanation": "The for loop repeats a specific number of times, such as for a class of ten."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Each item stored in a list is called an:",
+    "code": "",
+    "answers": [
+      "Item",
+      "Factor",
+      "Element",
+      "Member"
+    ],
+    "correct": 2,
+    "explanation": "Each item stored in a list is called an element."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which function returns the number of elements in a list?",
+    "code": "",
+    "answers": [
+      "count()",
+      "size()",
+      "total()",
+      "len()"
+    ],
+    "correct": 3,
+    "explanation": "The len function returns the number of elements in a list."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What should 'total' be initialized to for summing grades?",
+    "code": "",
+    "answers": [
+      "1.0",
+      "100.0",
+      "0.0",
+      "-1.0"
+    ],
+    "correct": 2,
+    "explanation": "The total is initialized to 0.0 before the summation loop."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which symbol defines the boundaries of a list?",
+    "code": "",
+    "answers": [
+      "()",
+      "{}",
+      "[]",
+      "<>"
+    ],
+    "correct": 2,
+    "explanation": "Lists are defined using square brackets."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "To repeat 'range(10)', the loop runs how many times?",
+    "code": "",
+    "answers": [
+      "9",
+      "10",
+      "11",
+      "Infinite"
+    ],
+    "correct": 1,
+    "explanation": "Range(10) holds a series of values that allow 10 iterations."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What is a list that can be modified called?",
+    "code": "",
+    "answers": [
+      "Constant",
+      "Mutable",
+      "Static",
+      "Locked"
+    ],
+    "correct": 1,
+    "explanation": "Lists are mutable, meaning their elements can be changed."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which operator joins two lists together?",
+    "code": "",
+    "answers": [
+      "*",
+      "+",
+      "&",
+      "++"
+    ],
+    "correct": 1,
+    "explanation": "The + operator performs list concatenation."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "To find the lowest grade, initialize 'min' to:",
+    "code": "",
+    "answers": [
+      "0",
+      "101",
+      "-1",
+      "50"
+    ],
+    "correct": 1,
+    "explanation": "Min is initialized to a value higher than any possible grade."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What is the output of len([5, 10, 15, 20])?",
+    "code": "",
+    "answers": [
+      "3",
+      "4",
+      "5",
+      "20"
+    ],
+    "correct": 1,
+    "explanation": "The function returns the total count of elements."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What occurs if you access list index 5 for a 4-item list?",
+    "code": "",
+    "answers": [
+      "SyntaxError",
+      "IndexError",
+      "ZeroError",
+      "Success"
+    ],
+    "correct": 1,
+    "explanation": "An IndexError exception is raised for invalid indexes."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which loop is best for iterating over a known list?",
+    "code": "",
+    "answers": [
+      "While loop",
+      "For loop",
+      "If loop",
+      "Do loop"
+    ],
+    "correct": 1,
+    "explanation": "The for loop is very useful for iterating over a list."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "To find the highest grade, initialize 'max' to:",
+    "code": "",
+    "answers": [
+      "100",
+      "-1",
+      "0",
+      "101"
+    ],
+    "correct": 1,
+    "explanation": "Max is initialized to a value lower than any possible grade."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "A list slice '[1:3]' returns elements at which indexes?",
+    "code": "",
+    "answers": [
+      "1, 2, 3",
+      "1 and 2",
+      "1, 2, 4",
+      "Only 3"
+    ],
+    "correct": 1,
+    "explanation": "Slices exclude the end index, returning start up to end-1."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "The '*' operator applied to a list results in:",
+    "code": "",
+    "answers": [
+      "Multiplication",
+      "Addition",
+      "Repetition",
+      "Deletion"
+    ],
+    "correct": 2,
+    "explanation": "The * operator performs list repetition."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "To convert a range to a list, use:",
+    "code": "",
+    "answers": [
+      "convert()",
+      "list()",
+      "set()",
+      "array()"
+    ],
+    "correct": 1,
+    "explanation": "The list() function can convert iterables to lists."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Grade average equals total sum divided by:",
+    "code": "",
+    "answers": [
+      "Maximum value",
+      "Item count",
+      "Minimum value",
+      "Total sum"
+    ],
+    "correct": 1,
+    "explanation": "Average is the sum divided by the number of students."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Can a Python list hold a string and an integer?",
+    "code": "",
+    "answers": [
+      "Yes",
+      "No",
+      "Only strings",
+      "Only integers"
+    ],
+    "correct": 0,
+    "explanation": "Lists can hold items of different types simultaneously."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What keyword checks if an item is in a list?",
+    "code": "",
+    "answers": [
+      "is",
+      "at",
+      "in",
+      "has"
+    ],
+    "correct": 2,
+    "explanation": "The 'in' operator determines if an item exists in a list."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "A slice '[:2]' starts at which index?",
+    "code": "",
+    "answers": [
+      "1",
+      "0",
+      "2",
+      "Last"
+    ],
+    "correct": 1,
+    "explanation": "If start is omitted, it defaults to 0."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which function allows user data entry?",
+    "code": "",
+    "answers": [
+      "get()",
+      "read()",
+      "input()",
+      "scan()"
+    ],
+    "correct": 2,
+    "explanation": "The input() function prompts the user for data."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "To process numbers, wrap 'input()' with:",
+    "code": "",
+    "answers": [
+      "str()",
+      "int()",
+      "float()",
+      "bool()"
+    ],
+    "correct": 1,
+    "explanation": "Input must be converted to an integer for math."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What updates the 'max' variable in a loop?",
+    "code": "",
+    "answers": [
+      "if grade < max",
+      "if grade > max",
+      "total + grade",
+      "max = 0"
+    ],
+    "correct": 1,
+    "explanation": "Update max if the current grade is larger."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which index is the second element?",
+    "code": "",
+    "answers": [
+      "0",
+      "1",
+      "2",
+      "-1"
+    ],
+    "correct": 1,
+    "explanation": "The second element is at index 1."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "To avoid IndexError in a while loop, use:",
+    "code": "",
+    "answers": [
+      "total()",
+      "size()",
+      "len()",
+      "max()"
+    ],
+    "correct": 2,
+    "explanation": "len() prevents invalid index access in loops."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Incrementing 'index += 1' in a while loop:",
+    "code": "",
+    "answers": [
+      "Multiplies the list",
+      "Prevents infinite loops",
+      "Deletes elements",
+      "Calculates sum"
+    ],
+    "correct": 1,
+    "explanation": "Incrementing allows traversal and prevents infinite cycles."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "A list slice '[2:]' goes until:",
+    "code": "",
+    "answers": [
+      "Index 2",
+      "The start",
+      "The end",
+      "Index 0"
+    ],
+    "correct": 2,
+    "explanation": "If end is omitted, it goes to the end of the list."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Python list items are separated by:",
+    "code": "",
+    "answers": [
+      "Dots",
+      "Spaces",
+      "Commas",
+      "Semicolons"
+    ],
+    "correct": 2,
+    "explanation": "Elements in a list are separated by commas."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "A list of grades [80, 90] has length:",
+    "code": "",
+    "answers": [
+      "1",
+      "2",
+      "80",
+      "90"
+    ],
+    "correct": 1,
+    "explanation": "Length is the count of elements in the list."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which list is empty?",
+    "code": "",
+    "answers": [
+      "[0]",
+      "[]",
+      "['']",
+      "None"
+    ],
+    "correct": 1,
+    "explanation": "An empty list contains no elements."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "To update 'total' in a loop, use:",
+    "code": "",
+    "answers": [
+      "total * grade",
+      "total + grade",
+      "total / 10",
+      "total - grade"
+    ],
+    "correct": 1,
+    "explanation": "Summation requires adding the current item to the total."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Accessing 'my_list[-1]' usually returns:",
+    "code": "",
+    "answers": [
+      "First element",
+      "Last element",
+      "Error",
+      "Null"
+    ],
+    "correct": 1,
+    "explanation": "Negative indexing is often used for end-relative access."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Iteration refers to:",
+    "code": "",
+    "answers": [
+      "Data storage",
+      "Repetitive execution",
+      "Memory allocation",
+      "Code deletion"
+    ],
+    "correct": 1,
+    "explanation": "Iteration involves repeating a block of instructions."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "A list with 10 items has max index:",
+    "code": "",
+    "answers": [
+      "10",
+      "9",
+      "11",
+      "0"
+    ],
+    "correct": 1,
+    "explanation": "Maximum index is always length - 1."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Which operator checks if 'A' is lower than 'B'?",
+    "code": "",
+    "answers": [
+      ">",
+      "<",
+      "==",
+      "!="
+    ],
+    "correct": 1,
+    "explanation": "The '<' operator is used for 'less than' checks."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Calculation of average happens:",
+    "code": "",
+    "answers": [
+      "Before the loop",
+      "Inside the loop",
+      "After the loop",
+      "Never"
+    ],
+    "correct": 2,
+    "explanation": "Average is calculated once the total sum is complete."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Updating 'min' requires:",
+    "code": "",
+    "answers": [
+      "if grade > min",
+      "if grade < min",
+      "min = 101",
+      "total / 10"
+    ],
+    "correct": 1,
+    "explanation": "Update min if the current grade is smaller."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "List concatenation produces:",
+    "code": "",
+    "answers": [
+      "A single number",
+      "A new list",
+      "An error",
+      "A string"
+    ],
+    "correct": 1,
+    "explanation": "Joining lists creates a combined new list."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "What happens if 'min' is initialized to 0?",
+    "code": "",
+    "answers": [
+      "It finds lowest",
+      "Min stays 0",
+      "Error occurs",
+      "Logic is correct"
+    ],
+    "correct": 1,
+    "explanation": "If min is 0, no positive grade will ever be smaller than it."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Why use 'while' over 'for' for lists?",
+    "code": "",
+    "answers": [
+      "It is faster",
+      "Manual index control",
+      "Uses less RAM",
+      "Handles strings"
+    ],
+    "correct": 1,
+    "explanation": "While loops require manual index management."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Slicing with invalid step results in:",
+    "code": "",
+    "answers": [
+      "Empty list",
+      "Value error",
+      "First element",
+      "Full list"
+    ],
+    "correct": 1,
+    "explanation": "Specific slice parameters must be valid integers."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Initializing 'max' to 100 for grades:",
+    "code": "",
+    "answers": [
+      "Always works",
+      "May fail",
+      "Is best",
+      "Is standard"
+    ],
+    "correct": 1,
+    "explanation": "If all grades are below 100, max will incorrectly stay 100."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Mutable property allows:",
+    "code": "",
+    "answers": [
+      "Renaming the list",
+      "In-place changes",
+      "Adding strings",
+      "Deleting the file"
+    ],
+    "correct": 1,
+    "explanation": "Mutable objects allow changing elements without creating new ones."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Loop 'range(1, 5)' iterates how many times?",
+    "code": "",
+    "answers": [
+      "5",
+      "4",
+      "6",
+      "1"
+    ],
+    "correct": 1,
+    "explanation": "Range starts at 1 and goes up to, but not including, 5."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Effect of 'my_list * 3' on memory:",
+    "code": "",
+    "answers": [
+      "Triples elements",
+      "Cubed values",
+      "No change",
+      "Deletes data"
+    ],
+    "correct": 0,
+    "explanation": "Repetition creates a new list with repeated content."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Logic for 'if (grade > max)' inside 'for' loop:",
+    "code": "",
+    "answers": [
+      "Finds average",
+      "Finds largest",
+      "Sums items",
+      "Exits loop"
+    ],
+    "correct": 1,
+    "explanation": "This is the standard algorithm for finding an extreme value."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Accessing index 'len(list)' results in:",
+    "code": "",
+    "answers": [
+      "Last element",
+      "First element",
+      "IndexError",
+      "Zero"
+    ],
+    "correct": 2,
+    "explanation": "The length is one higher than the maximum valid index."
+  },
+  {
+    "topic": "Loops & Lists",
+    "question": "Digital transformation utilizes loops for:",
+    "code": "",
+    "answers": [
+      "Manual entry",
+      "Automated processing",
+      "Hardware cooling",
+      "Data deletion"
+    ],
+    "correct": 1,
+    "explanation": "Loops automate repetitive data tasks like grade analysis."
+  },
+  {
+    "topic": "Output Analysis",
+    "question": "What is the output of the following code?",
+    "code": "x = 10\ny = 5\nif x > y and x < 15:\n    print('Safe')\nelse:\n    print('Danger')",
+    "answers": [
+      "Safe",
+      "Danger",
+      "10",
+      "Error"
+    ],
+    "correct": 0,
+    "explanation": "Both conditions (10 > 5) and (10 < 15) are True, so the 'if' block executes."
+  },
+  {
+    "topic": "Output Analysis",
+    "question": "Analyze the list operation and predict the output:",
+    "code": "my_list = [10, 20, 30]\nmy_list[1] = 50\nprint(my_list)",
+    "answers": [
+      "[50, 20, 30]",
+      "[10, 50, 30]",
+      "[10, 20, 50]",
+      "Error"
+    ],
+    "correct": 1,
+    "explanation": "Lists are mutable. Index 1 refers to the second element, which is updated from 20 to 50."
+  },
+  {
+    "topic": "Output Analysis",
+    "question": "What will be printed after this loop finishes?",
+    "code": "total = 0\nfor i in [1, 2, 3]:\n    total = total + i\nprint(total)",
+    "answers": [
+      "3",
+      "123",
+      "6",
+      "0"
+    ],
+    "correct": 2,
+    "explanation": "The loop sums the elements: 0 + 1 + 2 + 3 = 6."
+  },
+  {
+    "topic": "Output Analysis",
+    "question": "What is the output of this conditional slice?",
+    "code": "nums = [5, 10, 15, 20, 25]\nprint(nums[1:3])",
+    "answers": [
+      "[10, 15, 20]",
+      "[5, 10]",
+      "[10, 15]",
+      "[15, 20]"
+    ],
+    "correct": 2,
+    "explanation": "Slicing [start:end] includes the start index but excludes the end index. This grabs indexes 1 and 2."
+  },
+  {
+    "topic": "Output Analysis",
+    "question": "Determine the output of this nested logic:",
+    "code": "a = 100\nb = 200\nif a > 150:\n    print('High')\nelif b > 150:\n    print('Medium')\nelse:\n    print('Low')",
+    "answers": [
+      "High",
+      "Medium",
+      "Low",
+      "Error"
+    ],
+    "correct": 1,
+    "explanation": "The first condition (100 > 150) is False. The second (200 > 150) is True, so 'Medium' is printed."
+  }
+];
+
 const sheetItems = [
   ["لا تنسى", ["print بحروف صغيرة.", "النصوص داخل quotes.", "input ترجع string.", "استخدم == للمقارنة و = للتخزين."]],
   ["Problem Solving", ["افهم المشكلة قبل الكود.", "IPO = Input, Processing, Output.", "Algorithm خطوات الحل.", "اختبر الناتج وعدل الأخطاء."]],
@@ -229,13 +1447,17 @@ let activeLesson = 0;
 let completed = new Set(JSON.parse(localStorage.getItem("completedLessons") || "[]"));
 let currentQuestion = 0;
 let answersState = Array(quiz.length).fill(null);
+let currentDoctorQuestion = 0;
+let doctorAnswersState = Array(doctorQuestions.length).fill(null);
 
 const $ = (selector) => document.querySelector(selector);
 
 function renderStats() {
   $("#lessonCount").textContent = lessons.length;
-  $("#questionCount").textContent = quiz.length;
+  $("#questionCount").textContent = quiz.length + doctorQuestions.length;
   $("#labCount").textContent = labs.length;
+  const doctorCount = $("#doctorQuestionCount");
+  if (doctorCount) doctorCount.textContent = doctorQuestions.length;
 }
 
 function renderLessons() {
@@ -309,6 +1531,31 @@ function renderQuiz() {
   $("#scoreText").textContent = `${correct} / ${solved.length}`;
 }
 
+function renderDoctorQuestions() {
+  const q = doctorQuestions[currentDoctorQuestion];
+  $("#doctorQuestionNumber").textContent = "\u0633\u0624\u0627\u0644 " + (currentDoctorQuestion + 1) + " \u0645\u0646 " + doctorQuestions.length;
+  $("#doctorTopic").textContent = q.topic;
+  $("#doctorQuestionText").textContent = q.question;
+  $("#doctorQuestionCode").textContent = q.code;
+  $("#doctorQuestionCode").classList.toggle("hidden", !q.code);
+  $("#doctorAnswers").innerHTML = q.answers.map((answer, index) => {
+    const selected = doctorAnswersState[currentDoctorQuestion];
+    const cls = selected === null ? "" : index === q.correct ? "correct" : selected === index ? "wrong" : "";
+    return `<button class="answer-btn ${cls}" data-doctor-answer="${index}">${String.fromCharCode(97 + index)}) ${answer}</button>`;
+  }).join("");
+
+  const feedback = $("#doctorFeedback");
+  if (doctorAnswersState[currentDoctorQuestion] === null) {
+    feedback.classList.add("hidden");
+  } else {
+    feedback.classList.remove("hidden");
+    feedback.textContent = q.explanation;
+  }
+
+  const solved = doctorAnswersState.filter((answer) => answer !== null);
+  const correct = solved.filter((answer, index) => answer === doctorQuestions[index].correct).length;
+  $("#doctorScoreText").textContent = `${correct} / ${solved.length}`;
+}
 function renderSheet() {
   $("#sheetGrid").innerHTML = sheetItems.map(([title, items]) => `
     <article class="sheet-card">
@@ -338,6 +1585,13 @@ document.addEventListener("click", (event) => {
     renderLessons();
   }
 
+  const doctorAnswer = event.target.closest("[data-doctor-answer]");
+  if (doctorAnswer) {
+    doctorAnswersState[currentDoctorQuestion] = Number(doctorAnswer.dataset.doctorAnswer);
+    renderDoctorQuestions();
+    return;
+  }
+
   const answer = event.target.closest(".answer-btn");
   if (answer) {
     answersState[currentQuestion] = Number(answer.dataset.answer);
@@ -353,10 +1607,21 @@ document.addEventListener("click", (event) => {
     currentQuestion = Math.max(0, currentQuestion - 1);
     renderQuiz();
   }
+
+  if (event.target.id === "nextDoctorQuestion") {
+    currentDoctorQuestion = Math.min(doctorQuestions.length - 1, currentDoctorQuestion + 1);
+    renderDoctorQuestions();
+  }
+
+  if (event.target.id === "prevDoctorQuestion") {
+    currentDoctorQuestion = Math.max(0, currentDoctorQuestion - 1);
+    renderDoctorQuestions();
+  }
 });
 
 renderLessons();
 renderLab();
 renderQuiz();
+renderDoctorQuestions();
 renderSheet();
 renderStats();
