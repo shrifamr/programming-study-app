@@ -1469,6 +1469,15 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+function isOperatorAnswer(value) {
+  return /^(?:[<>]=?|=[<>]|={1,2}|!={1}|=>|=<|\/\/|\/|\*\*|\+|-|%|\[\])$/.test(String(value).trim());
+}
+
+function formatAnswerText(value) {
+  const text = String(value);
+  return isOperatorAnswer(text) ? `<code class="inline-op">${escapeHtml(text)}</code>` : escapeHtml(text);
+}
+
 function questionKey(type, index) {
   return `${type}:${index}`;
 }
@@ -1563,7 +1572,7 @@ function renderQuiz() {
   $("#answers").innerHTML = q.answers.map((answer, index) => {
     const selected = answersState[currentQuestion];
     const cls = selected === null ? "" : index === q.correct ? "correct" : selected === index ? "wrong" : "";
-    return `<button class="answer-btn ${cls}" data-answer="${index}">${String.fromCharCode(97 + index)}) ${answer}</button>`;
+    return `<button class="answer-btn ${cls}" data-answer="${index}">${String.fromCharCode(97 + index)}) ${formatAnswerText(answer)}</button>`;
   }).join("");
 
   const feedback = $("#feedback");
@@ -1590,7 +1599,7 @@ function renderDoctorQuestions() {
   $("#doctorAnswers").innerHTML = q.answers.map((answer, index) => {
     const selected = doctorAnswersState[currentDoctorQuestion];
     const cls = selected === null ? "" : index === q.correct ? "correct" : selected === index ? "wrong" : "";
-    return `<button class="answer-btn ${cls}" data-doctor-answer="${index}">${String.fromCharCode(97 + index)}) ${answer}</button>`;
+    return `<button class="answer-btn ${cls}" data-doctor-answer="${index}">${String.fromCharCode(97 + index)}) ${formatAnswerText(answer)}</button>`;
   }).join("");
 
   const feedback = $("#doctorFeedback");
@@ -1624,7 +1633,7 @@ function renderSavedQuestionList(containerSelector, keys, listType, emptyText) {
       </div>
       <h3>${escapeHtml(question.question)}</h3>
       ${question.code ? `<pre class="code-block">${escapeHtml(question.code)}</pre>` : ""}
-      <p>الإجابة الصحيحة: <strong>${escapeHtml(question.answers[question.correct])}</strong></p>
+      <p>الإجابة الصحيحة: <strong>${formatAnswerText(question.answers[question.correct])}</strong></p>
       <div class="saved-actions">
         <button class="secondary-btn" data-open-saved="${type}:${index}">فتح السؤال</button>
         <button class="secondary-btn danger-btn" data-remove-${listType}="${type}:${index}">إزالة</button>
