@@ -1582,7 +1582,7 @@ const doctorReviewQuestions = [
       "None of The Above"
     ],
     "correct": 0,
-    "explanation": "24 % 6 = 0 and 0 % 3 = 0. 26 / 3 // 3 equals 2.0, so the intended pair is (0, 2)."
+    "explanation": "24 % 6 = 0 and 0 % 3 = 0. In exact Python output, 26 / 3 // 3 gives 2.0; the exam option writes it as 2."
   },
   {
     "topic": "Strings",
@@ -1990,15 +1990,15 @@ const doctorReviewQuestions = [
   {
     "topic": "Loops",
     "question": "What is the output of the following?",
-    "code": "x = \"abcdef\"\ni = \"a\"\nwhile i in x:\n    print(\"i\", end=\" \")",
+    "code": "x = \"abcdef\"\ni = \"a\"\nwhile i in x:\n    print(i, end=\" \")",
     "answers": [
       "No Output",
-      "i i i i i i i i .....",
+      "a a a a a a a a .....",
       "a b c d e f",
       "None of the above"
     ],
     "correct": 1,
-    "explanation": "The condition stays true and the code prints the literal string i endlessly."
+    "explanation": "i remains 'a', and 'a' is in x, so the loop prints a endlessly."
   },
   {
     "topic": "Loops",
@@ -2130,8 +2130,8 @@ const doctorReviewQuestions = [
       "True",
       "False"
     ],
-    "correct": 0,
-    "explanation": "This is the usual course rule, with exponentiation ** treated as the important exception separately."
+    "correct": 1,
+    "explanation": "This is not always true in Python. Most same-precedence operators go left to right, but ** is evaluated right to left."
   },
   {
     "topic": "True/False",
