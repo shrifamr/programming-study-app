@@ -2130,8 +2130,63 @@ const doctorReviewQuestions = [
       "True",
       "False"
     ],
+    "correct": 0,
+    "explanation": "Most operators with the same precedence are evaluated from left to right. Exponentiation ** is the famous exception."
+  },
+  {
+    "topic": "True/False",
+    "question": "Python is considered a compiler.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
     "correct": 1,
-    "explanation": "This is not always true in Python. Most same-precedence operators go left to right, but ** is evaluated right to left."
+    "explanation": "Python is usually described as an interpreted language, not a compiler."
+  },
+  {
+    "topic": "True/False",
+    "question": "Flow chart is more standard than pseudocode.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Flowcharts use standard symbols, while pseudocode is written in a more flexible English-like style."
+  },
+  {
+    "topic": "True/False",
+    "question": "The rectangle shape in a flowchart is used to express the process.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "The rectangle symbol represents a process or instruction step."
+  },
+  {
+    "topic": "True/False",
+    "question": "When we divide 5/0 the result will be 0.",
+    "code": "5 / 0",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Division by zero causes an error, not the value 0."
+  },
+  {
+    "topic": "True/False",
+    "question": "To add new line we use \\new.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "The newline escape sequence is \\n."
   },
   {
     "topic": "True/False",
@@ -2165,6 +2220,17 @@ const doctorReviewQuestions = [
     ],
     "correct": 1,
     "explanation": "** is right-associative, so 2**2**3 means 2**(2**3)."
+  },
+  {
+    "topic": "True/False",
+    "question": "Pseudocode uses English-like phrases.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Pseudocode describes algorithm steps using simple English-like phrases."
   },
   {
     "topic": "True/False",
