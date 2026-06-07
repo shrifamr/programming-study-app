@@ -1440,6 +1440,756 @@ const doctorQuestions = [
   }
 ];
 
+const doctorReviewQuestions = [
+  {
+    "topic": "Loops",
+    "question": "The while loop is a ---------------- type of loop.",
+    "code": "",
+    "answers": [
+      "Pretest",
+      "Post-test",
+      "Prequalified",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "while checks the condition before running the body, so it is a pretest loop."
+  },
+  {
+    "topic": "Operators",
+    "question": "The += operator is an example of a(n) ---------------- operator.",
+    "code": "",
+    "answers": [
+      "Relational assignment",
+      "Complex assignment",
+      "Augmented assignment",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "x += 1 is short for x = x + 1, so it is augmented assignment."
+  },
+  {
+    "topic": "Decision",
+    "question": "The ----------- statement causes one or more statements to execute only when a Boolean expression is -----------.",
+    "code": "",
+    "answers": [
+      "Else, false",
+      "If, true",
+      "If, false",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "An if statement executes its block only when the condition is true."
+  },
+  {
+    "topic": "Lists",
+    "question": "This is a number that identifies an item in a list.",
+    "code": "",
+    "answers": [
+      "Index",
+      "Element",
+      "Identifier",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "The index is the position number of an item in a list."
+  },
+  {
+    "topic": "Precedence",
+    "question": "Which of these have highest precedence?",
+    "code": "",
+    "answers": [
+      "*",
+      "/",
+      "**",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "Exponentiation ** has higher precedence than multiplication and division."
+  },
+  {
+    "topic": "Print",
+    "question": "Select the output of the following code:",
+    "code": "print('h', '-', 'r', 'u', sep='-')",
+    "answers": [
+      "h---r-u",
+      "h--r-u",
+      "h-r-u",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "sep='-' is inserted between all values. Since one value is already '-', the output becomes h---r-u."
+  },
+  {
+    "topic": "Expressions",
+    "question": "If A = 18 and B = 14, evaluate the expression: A % B // 16",
+    "code": "A = 18\nB = 14\nA % B // 16",
+    "answers": [
+      "0.25",
+      "0",
+      "1",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "18 % 14 = 4, then 4 // 16 = 0."
+  },
+  {
+    "topic": "Expressions",
+    "question": "What is the output of the following expression?",
+    "code": "print(7 / (4 + 3.0))",
+    "answers": [
+      "1",
+      "1.0",
+      "Error",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "4 + 3.0 = 7.0, and 7 / 7.0 gives 1.0."
+  },
+  {
+    "topic": "Operators",
+    "question": "In the expression 12 + 7, the values on the right and left of the + symbol are called -----------.",
+    "code": "12 + 7",
+    "answers": [
+      "Operators",
+      "Operands",
+      "Math expressions",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "The operator is +, and the values it works on are operands."
+  },
+  {
+    "topic": "Control Structures",
+    "question": "A logical design that controls the order in which a set of statements execute is called a ----.",
+    "code": "",
+    "answers": [
+      "Control structure",
+      "Logical structure",
+      "Sequence structure",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "A control structure controls execution order."
+  },
+  {
+    "topic": "Expressions",
+    "question": "What is the value of the following expression?",
+    "code": "24 % 6 % 3, 26 / 3 // 3",
+    "answers": [
+      "(0, 2)",
+      "(0, 3)",
+      "(1, 2)",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "24 % 6 = 0 and 0 % 3 = 0. 26 / 3 // 3 equals 2.0, so the intended pair is (0, 2)."
+  },
+  {
+    "topic": "Strings",
+    "question": "When a program compares characters, it actually compares the ------------ codes.",
+    "code": "",
+    "answers": [
+      "Binary",
+      "ASCII",
+      "Numeric",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "The course reference uses ASCII codes for character comparison."
+  },
+  {
+    "topic": "Lists",
+    "question": "What is the value of num if: num = list(range(0, 6, 2))",
+    "code": "num = list(range(0, 6, 2))",
+    "answers": [
+      "[0, 2, 4]",
+      "[0, 2, 4, 6]",
+      "[0, 6, 2]",
+      "None of the Above"
+    ],
+    "correct": 0,
+    "explanation": "range(0, 6, 2) starts at 0, adds 2, and stops before 6."
+  },
+  {
+    "topic": "Boolean",
+    "question": "Which of the following Boolean expressions is NOT logically equivalent to the other three?",
+    "code": "",
+    "answers": [
+      "-7>=0 and -7<=12",
+      "not(-7<0 or -7>12)",
+      "not(-7>12 or -7==12)",
+      "not(-7<12 or -7==12)"
+    ],
+    "correct": 2,
+    "explanation": "a, b, and d evaluate to False. c evaluates to True, so it is not equivalent."
+  },
+  {
+    "topic": "Boolean",
+    "question": "A ------------ is a Boolean variable that signals when some condition exists in the program.",
+    "code": "",
+    "answers": [
+      "Signal",
+      "Sentinel",
+      "Flag",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "A flag is a Boolean variable used to signal a condition."
+  },
+  {
+    "topic": "Translators",
+    "question": "A(n) -------- program translates a high-level language program into a separate machine language program.",
+    "code": "",
+    "answers": [
+      "Assembler",
+      "Compiler",
+      "Translator",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "A compiler translates a whole high-level program into a separate machine-language program."
+  },
+  {
+    "topic": "Machine Language",
+    "question": "Computers can only execute programs that are written in ---------.",
+    "code": "",
+    "answers": [
+      "Machine language",
+      "High-level language",
+      "Pseudocode",
+      "Python"
+    ],
+    "correct": 0,
+    "explanation": "The CPU directly executes machine language instructions."
+  },
+  {
+    "topic": "Loops",
+    "question": "Which of the following is a count-controlled loop?",
+    "code": "",
+    "answers": [
+      "While",
+      "Do-while",
+      "For",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "A for loop is commonly used when the number of iterations is known."
+  },
+  {
+    "topic": "Syntax",
+    "question": "The rules that must be followed when writing a program are called -----------.",
+    "code": "",
+    "answers": [
+      "Syntax",
+      "Operators",
+      "Key words",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "Syntax means the grammar/rules of the programming language."
+  },
+  {
+    "topic": "Loops",
+    "question": "A variable used to calculate the number of iterations of a loop is called a(n) ------------.",
+    "code": "",
+    "answers": [
+      "Incrementor",
+      "Counter",
+      "Controller",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "A counter counts loop iterations or repeated events."
+  },
+  {
+    "topic": "Lists",
+    "question": "What is the value of X if: L=[2, 4, 6, 8] and X = L[L[2] // 2 - L[1]]",
+    "code": "L = [2, 4, 6, 8]\nX = L[L[2] // 2 - L[1]]",
+    "answers": [
+      "2",
+      "0",
+      "8",
+      "None of the Above"
+    ],
+    "correct": 2,
+    "explanation": "L[2] = 6, 6 // 2 = 3, L[1] = 4, so index = -1. L[-1] is 8."
+  },
+  {
+    "topic": "Lists",
+    "question": "This is the last index in a list.",
+    "code": "",
+    "answers": [
+      "0",
+      "List size",
+      "List size - 1",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "Indexes start at 0, so the last index is length - 1."
+  },
+  {
+    "topic": "Lists",
+    "question": "This will happen if you try to use an index that is out of range for a list.",
+    "code": "",
+    "answers": [
+      "Nothing",
+      "Syntax Error",
+      "IndexError",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "Python raises IndexError when a list index is outside the valid range."
+  },
+  {
+    "topic": "Lists",
+    "question": "Suppose listExample is ['h','e','l','l','o'], what is len(listExample)?",
+    "code": "listExample = ['h','e','l','l','o']\nlen(listExample)",
+    "answers": [
+      "5",
+      "4",
+      "Error",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "The list has five elements."
+  },
+  {
+    "topic": "Lists",
+    "question": "Suppose list = [2, 33, 222, 14, 7], what is value of list[1:4:2]?",
+    "code": "list = [2, 33, 222, 14, 7]\nlist[1:4:2]",
+    "answers": [
+      "[2, 222]",
+      "[33, 14]",
+      "[7]",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "Start at index 1, stop before index 4, step 2: indexes 1 and 3 -> [33, 14]."
+  },
+  {
+    "topic": "Lists",
+    "question": "Suppose numList is [3, 2, 1], what is numList * 2?",
+    "code": "numList = [3, 2, 1]\nnumList * 2",
+    "answers": [
+      "[9, 6, 3]",
+      "[3, 2, 1], [3, 2, 1]",
+      "[3, 2, 1, 3, 2, 1]",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "Multiplying a list repeats its elements."
+  },
+  {
+    "topic": "Comments",
+    "question": "This symbol marks the beginning of a comment in Python.",
+    "code": "",
+    "answers": [
+      "||",
+      "//",
+      "#",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "Python comments start with #."
+  },
+  {
+    "topic": "Lists",
+    "question": "If L1=[1, 2, 3] and L2=[3, 2, 1] then L1 + L2 = ....................",
+    "code": "L1 = [1, 2, 3]\nL2 = [3, 2, 1]\nL1 + L2",
+    "answers": [
+      "[4, 4, 4]",
+      "[1, 2, 3, 2, 1]",
+      "[1, 2, 3], [3, 2, 1]",
+      "None of the Above"
+    ],
+    "correct": 3,
+    "explanation": "List + concatenates lists: [1, 2, 3, 3, 2, 1], which is not shown."
+  },
+  {
+    "topic": "Operators",
+    "question": "Which of the following operators has its associativity from right to left?",
+    "code": "",
+    "answers": [
+      "%",
+      "++",
+      "**",
+      "None of The Above"
+    ],
+    "correct": 2,
+    "explanation": "Exponentiation ** groups from right to left in Python."
+  },
+  {
+    "topic": "Keywords",
+    "question": "Which of the following is a python keyword?",
+    "code": "",
+    "answers": [
+      "Else",
+      "Whil",
+      "Prints",
+      "None of the Above"
+    ],
+    "correct": 3,
+    "explanation": "Python keywords are case-sensitive: else is a keyword, but Else is not."
+  },
+  {
+    "topic": "Type Conversion",
+    "question": "What is the value of the expression: float(7 + int(13.5)%3)",
+    "code": "float(7 + int(13.5) % 3)",
+    "answers": [
+      "8.0",
+      "8",
+      "Error",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "int(13.5)=13, 13%3=1, 7+1=8, float(8)=8.0."
+  },
+  {
+    "topic": "Decision",
+    "question": "You use a(n) ------------ statement to write a dual alternative decision structure.",
+    "code": "",
+    "answers": [
+      "If statement",
+      "If-else statement",
+      "If-call statement",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "A dual alternative decision has two paths: if and else."
+  },
+  {
+    "topic": "Boolean",
+    "question": "A compound Boolean expression created with the -------------- operator is true if either one of its subexpressions is true.",
+    "code": "",
+    "answers": [
+      "Or",
+      "Not",
+      "And",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "or is true when at least one subexpression is true."
+  },
+  {
+    "topic": "Expressions",
+    "question": "What is the value of the expression: 3 + 4 ** 2 // 12",
+    "code": "3 + 4 ** 2 // 12",
+    "answers": [
+      "0",
+      "4",
+      "3",
+      "None of The Above"
+    ],
+    "correct": 1,
+    "explanation": "4**2=16, 16//12=1, then 3+1=4."
+  },
+  {
+    "topic": "Expressions",
+    "question": "What is the value of X if: X = 3 + 9 * ((4 * 11) - 4) / 10",
+    "code": "X = 3 + 9 * ((4 * 11) - 4) / 10",
+    "answers": [
+      "39.0",
+      "35.0",
+      "35",
+      "None of The Above"
+    ],
+    "correct": 0,
+    "explanation": "4*11=44, 44-4=40, 9*40/10=36.0, then 3+36.0=39.0."
+  },
+  {
+    "topic": "Loops",
+    "question": "What is the output of the following?",
+    "code": "for i in range(0):\n    print(i)",
+    "answers": [
+      "No output",
+      "Error",
+      "0",
+      "None of the above"
+    ],
+    "correct": 0,
+    "explanation": "range(0) has no values, so the loop body does not run."
+  },
+  {
+    "topic": "Loops",
+    "question": "What is the output of the following?",
+    "code": "for i in range(2.0):\n    print(i)",
+    "answers": [
+      "0.0 1.0",
+      "Error",
+      "0 1",
+      "None of the above"
+    ],
+    "correct": 1,
+    "explanation": "range() requires integers. 2.0 is a float, so Python raises TypeError."
+  },
+  {
+    "topic": "Loops",
+    "question": "What is the output of the following?",
+    "code": "x = 'abcd'\nfor i in range(len(x)):\n    x = 'a'\n    print(x)",
+    "answers": [
+      "a a a a",
+      "abcd abcd abcd abcd",
+      "Error",
+      "None of the above"
+    ],
+    "correct": 0,
+    "explanation": "range(len(x)) is evaluated first as range(4). Each iteration sets x to a and prints it."
+  },
+  {
+    "topic": "Loops",
+    "question": "What is the output of the following?",
+    "code": "x = 'aaaa'\nfor i in range(len(x)):\n    print(x, end=' ')\n    x = 'a'",
+    "answers": [
+      "aaaaaaaa",
+      "aaaa aaaa aaaa aaaa",
+      "aaaa a a a",
+      "None of the above"
+    ],
+    "correct": 2,
+    "explanation": "First print uses original x = aaaa, then x becomes a for the next three prints."
+  },
+  {
+    "topic": "Loops",
+    "question": "What is the output of the following code?",
+    "code": "i = 4\nwhile True:\n    if i % 3 == 0:\n        print(i)\n    i -= 2",
+    "answers": [
+      "4 2",
+      "4",
+      "4 2 0 -1 .......",
+      "None of the above"
+    ],
+    "correct": 3,
+    "explanation": "The loop is infinite and prints 0, -6, -12, ... . None of the listed outputs matches."
+  },
+  {
+    "topic": "Syntax",
+    "question": "What is the output of the following?",
+    "code": "if (9 < 0) and (0 < -9):\n    print(\"hello\")\nelif (9 > 0) or False:\n    print(\"good\")\nelif\n    print(\"bad\")",
+    "answers": [
+      "bad",
+      "hello",
+      "good",
+      "Error"
+    ],
+    "correct": 3,
+    "explanation": "The last elif has no condition and no colon, so the code has a syntax error."
+  },
+  {
+    "topic": "Loops",
+    "question": "What is the output of the following?",
+    "code": "x = \"abcdef\"\ni = \"c\"\nwhile i in x:\n    print(i, end=\" \")",
+    "answers": [
+      "No Output",
+      "c c c c c c c c .....",
+      "a b c d e f",
+      "None of the above"
+    ],
+    "correct": 1,
+    "explanation": "i remains c forever, and c is in x, so the loop prints c endlessly."
+  },
+  {
+    "topic": "Loops",
+    "question": "What is the output of the following?",
+    "code": "x = \"abcdef\"\ni = \"a\"\nwhile i in x:\n    print(\"i\", end=\" \")",
+    "answers": [
+      "No Output",
+      "i i i i i i i i .....",
+      "a b c d e f",
+      "None of the above"
+    ],
+    "correct": 1,
+    "explanation": "The condition stays true and the code prints the literal string i endlessly."
+  },
+  {
+    "topic": "Loops",
+    "question": "Which numbers are printed?",
+    "code": "for i in range(3):\n    print(i-1)\nfor i in range(3,3):\n    print(i+1)",
+    "answers": [
+      "1, 0, 1",
+      "0, 1, 2, 3",
+      "1, 0, 1, 1",
+      "None of the above"
+    ],
+    "correct": 3,
+    "explanation": "The first loop prints -1, 0, 1. The second loop prints nothing, so none of the options is exact."
+  },
+  {
+    "topic": "Syntax",
+    "question": "What is the output of the following code?",
+    "code": "False = True\nwhile False:\n    print(True)\n    break",
+    "answers": [
+      "True",
+      "None",
+      "Error",
+      "None of the above"
+    ],
+    "correct": 2,
+    "explanation": "False is a Python keyword/constant and cannot be assigned to."
+  },
+  {
+    "topic": "Expressions",
+    "question": "What is the value in res?",
+    "code": "num1 = 30\nnum2 = 60\nres = (num1 + num2) // 4",
+    "answers": [
+      "22.5",
+      "22",
+      "22.0",
+      "None of the above"
+    ],
+    "correct": 1,
+    "explanation": "30+60=90, and 90//4 = 22."
+  },
+  {
+    "topic": "Lists",
+    "question": "What gets printed?",
+    "code": "numbers = [1, 2, 3, 4, 5, 6, 7, 8]\nprint(numbers[-6:6])",
+    "answers": [
+      "[3, 4, 5, 6]",
+      "[3, 4, 5, 6, 7]",
+      "Error",
+      "None of the above"
+    ],
+    "correct": 0,
+    "explanation": "-6 points to index 2. The stop index 6 is excluded, so the slice is [3,4,5,6]."
+  },
+  {
+    "topic": "Type Conversion",
+    "question": "What is the value of x if: x = int(35.45 + 3/3 - 0.5)",
+    "code": "x = int(35.45 + 3/3 - 0.5)",
+    "answers": [
+      "15.38",
+      "35",
+      "Error",
+      "None of the above"
+    ],
+    "correct": 1,
+    "explanation": "3/3=1.0, so the value is int(35.95), which becomes 35."
+  },
+  {
+    "topic": "Expressions",
+    "question": "What is the output of this expression: 4 * 1 ** 2",
+    "code": "4 * 1 ** 2",
+    "answers": [
+      "4",
+      "16",
+      "Error",
+      "None of the above"
+    ],
+    "correct": 0,
+    "explanation": "1**2=1, then 4*1=4."
+  },
+  {
+    "topic": "True/False",
+    "question": "The statement print('G','J','P','R', end='@') will display GJPR@ on screen.",
+    "code": "print('G','J','P','R', end='@')",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Default sep is a space, so it displays G J P R@, not GJPR@."
+  },
+  {
+    "topic": "True/False",
+    "question": "A logical design that controls the order in which a set of statements execute is called a sequence structure.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "That definition is control structure, not specifically sequence structure."
+  },
+  {
+    "topic": "True/False",
+    "question": "The value of the expressions 4/(3*(2-1)) and 4/3*(2-1) is the same.",
+    "code": "4/(3*(2-1))\n4/3*(2-1)",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "Both expressions evaluate to 4/3, approximately 1.333."
+  },
+  {
+    "topic": "True/False",
+    "question": "Mathematical operations can be performed on a string.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "In this course context, mathematical arithmetic is for numeric values, not strings."
+  },
+  {
+    "topic": "True/False",
+    "question": "Operators with the same precedence are evaluated from Left to Right.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "This is the usual course rule, with exponentiation ** treated as the important exception separately."
+  },
+  {
+    "topic": "True/False",
+    "question": "The expression 6.0 + float(6) is an example of type conversion.",
+    "code": "6.0 + float(6)",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "float(6) converts the integer 6 to 6.0."
+  },
+  {
+    "topic": "True/False",
+    "question": "Remainder python operator (%) can be applied to all types of numbers.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "The remainder operator works with numeric operands such as integers and floats in Python."
+  },
+  {
+    "topic": "True/False",
+    "question": "The expression 2**2**3 is evaluates as: (2**2)**3.",
+    "code": "2**2**3",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "** is right-associative, so 2**2**3 means 2**(2**3)."
+  },
+  {
+    "topic": "True/False",
+    "question": "A condition-controlled loop always repeats a specific number of times.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "A condition-controlled loop repeats while a condition is true, not for a guaranteed specific count."
+  },
+  {
+    "topic": "True/False",
+    "question": "A bit is enough memory to store a letter of the alphabet or a small number.",
+    "code": "",
+    "answers": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "A bit stores only 0 or 1. A byte is commonly used for a character or small numeric code."
+  }
+];
+
 const sheetItems = [
   ["لا تنسى", ["print بحروف صغيرة.", "النصوص داخل quotes.", "input ترجع string.", "استخدم == للمقارنة و = للتخزين."]],
   ["Problem Solving", ["افهم المشكلة قبل الكود.", "IPO = Input, Processing, Output.", "Algorithm خطوات الحل.", "اختبر الناتج وعدل الأخطاء."]],
@@ -1456,6 +2206,8 @@ let currentQuestion = 0;
 let answersState = Array(quiz.length).fill(null);
 let currentDoctorQuestion = 0;
 let doctorAnswersState = Array(doctorQuestions.length).fill(null);
+let currentDoctorReviewQuestion = 0;
+let doctorReviewAnswersState = Array(doctorReviewQuestions.length).fill(null);
 let wrongQuestionKeys = new Set(JSON.parse(localStorage.getItem("wrongQuestionKeys") || "[]"));
 let favoriteQuestionKeys = new Set(JSON.parse(localStorage.getItem("favoriteQuestionKeys") || "[]"));
 
@@ -1485,7 +2237,7 @@ function questionKey(type, index) {
 function getQuestionByKey(key) {
   const [type, rawIndex] = key.split(":");
   const index = Number(rawIndex);
-  const bank = type === "doctor" ? doctorQuestions : quiz;
+  const bank = type === "doctor" ? doctorQuestions : type === "doctorReview" ? doctorReviewQuestions : quiz;
   const question = bank[index];
   return question ? { type, index, question } : null;
 }
@@ -1507,14 +2259,22 @@ function updateFavoriteButtons() {
     const saved = favoriteQuestionKeys.has(questionKey("doctor", currentDoctorQuestion));
     doctorFavorite.textContent = saved ? "إزالة من المفضلة" : "حفظ في المفضلة";
   }
+
+  const doctorReviewFavorite = $("#toggleDoctorReviewFavorite");
+  if (doctorReviewFavorite) {
+    const saved = favoriteQuestionKeys.has(questionKey("doctorReview", currentDoctorReviewQuestion));
+    doctorReviewFavorite.textContent = saved ? "إزالة من المفضلة" : "حفظ في المفضلة";
+  }
 }
 
 function renderStats() {
   $("#lessonCount").textContent = lessons.length;
-  $("#questionCount").textContent = quiz.length + doctorQuestions.length;
+  $("#questionCount").textContent = quiz.length + doctorQuestions.length + doctorReviewQuestions.length;
   $("#labCount").textContent = labs.length;
   const doctorCount = $("#doctorQuestionCount");
   if (doctorCount) doctorCount.textContent = doctorQuestions.length;
+  const doctorReviewCount = $("#doctorReviewQuestionCount");
+  if (doctorReviewCount) doctorReviewCount.textContent = doctorReviewQuestions.length;
 }
 
 function renderLessons() {
@@ -1616,6 +2376,33 @@ function renderDoctorQuestions() {
   updateFavoriteButtons();
 }
 
+function renderDoctorReviewQuestions() {
+  const q = doctorReviewQuestions[currentDoctorReviewQuestion];
+  $("#doctorReviewQuestionNumber").textContent = `سؤال ${currentDoctorReviewQuestion + 1} من ${doctorReviewQuestions.length}`;
+  $("#doctorReviewTopic").textContent = q.topic;
+  $("#doctorReviewQuestionText").textContent = q.question;
+  $("#doctorReviewQuestionCode").textContent = q.code;
+  $("#doctorReviewQuestionCode").classList.toggle("hidden", !q.code);
+  $("#doctorReviewAnswers").innerHTML = q.answers.map((answer, index) => {
+    const selected = doctorReviewAnswersState[currentDoctorReviewQuestion];
+    const cls = selected === null ? "" : index === q.correct ? "correct" : selected === index ? "wrong" : "";
+    return `<button class="answer-btn ${cls}" data-doctor-review-answer="${index}">${String.fromCharCode(97 + index)}) ${formatAnswerText(answer)}</button>`;
+  }).join("");
+
+  const feedback = $("#doctorReviewFeedback");
+  if (doctorReviewAnswersState[currentDoctorReviewQuestion] === null) {
+    feedback.classList.add("hidden");
+  } else {
+    feedback.classList.remove("hidden");
+    feedback.textContent = q.explanation;
+  }
+
+  const solved = doctorReviewAnswersState.filter((answer) => answer !== null);
+  const correct = solved.filter((answer, index) => answer === doctorReviewQuestions[index].correct).length;
+  $("#doctorReviewScoreText").textContent = `${correct} / ${solved.length}`;
+  updateFavoriteButtons();
+}
+
 function renderSavedQuestionList(containerSelector, keys, listType, emptyText) {
   const container = $(containerSelector);
   const items = [...keys].map(getQuestionByKey).filter(Boolean);
@@ -1628,7 +2415,7 @@ function renderSavedQuestionList(containerSelector, keys, listType, emptyText) {
   container.innerHTML = items.map(({ type, index, question }) => `
     <article class="saved-card">
       <div class="saved-meta">
-        <span>${type === "doctor" ? "أسئلة الدكتور" : "MCQ"}</span>
+        <span>${type === "doctor" ? "أسئلة الدكتور" : type === "doctorReview" ? "أسئلة مراجعة الدكتور" : "MCQ"}</span>
         <span>${escapeHtml(question.topic)}</span>
       </div>
       <h3>${escapeHtml(question.question)}</h3>
@@ -1672,6 +2459,13 @@ function openSavedQuestion(key) {
     return;
   }
 
+  if (saved.type === "doctorReview") {
+    currentDoctorReviewQuestion = saved.index;
+    renderDoctorReviewQuestions();
+    activateView("doctorReview");
+    return;
+  }
+
   currentQuestion = saved.index;
   renderQuiz();
   activateView("quiz");
@@ -1709,6 +2503,20 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const doctorReviewAnswer = event.target.closest("[data-doctor-review-answer]");
+  if (doctorReviewAnswer) {
+    const selected = Number(doctorReviewAnswer.dataset.doctorReviewAnswer);
+    doctorReviewAnswersState[currentDoctorReviewQuestion] = selected;
+    if (selected !== doctorReviewQuestions[currentDoctorReviewQuestion].correct) {
+      wrongQuestionKeys.add(questionKey("doctorReview", currentDoctorReviewQuestion));
+      persistSavedQuestions();
+      renderSavedQuestions();
+      activateView("wrong");
+    }
+    renderDoctorReviewQuestions();
+    return;
+  }
+
   const answer = event.target.closest(".answer-btn");
   if (answer) {
     const selected = Number(answer.dataset.answer);
@@ -1736,6 +2544,15 @@ document.addEventListener("click", (event) => {
     favoriteQuestionKeys.has(key) ? favoriteQuestionKeys.delete(key) : favoriteQuestionKeys.add(key);
     persistSavedQuestions();
     renderDoctorQuestions();
+    renderSavedQuestions();
+    activateView("favorites");
+  }
+
+  if (event.target.id === "toggleDoctorReviewFavorite") {
+    const key = questionKey("doctorReview", currentDoctorReviewQuestion);
+    favoriteQuestionKeys.has(key) ? favoriteQuestionKeys.delete(key) : favoriteQuestionKeys.add(key);
+    persistSavedQuestions();
+    renderDoctorReviewQuestions();
     renderSavedQuestions();
     activateView("favorites");
   }
@@ -1779,12 +2596,23 @@ document.addEventListener("click", (event) => {
     currentDoctorQuestion = Math.max(0, currentDoctorQuestion - 1);
     renderDoctorQuestions();
   }
+
+  if (event.target.id === "nextDoctorReviewQuestion") {
+    currentDoctorReviewQuestion = Math.min(doctorReviewQuestions.length - 1, currentDoctorReviewQuestion + 1);
+    renderDoctorReviewQuestions();
+  }
+
+  if (event.target.id === "prevDoctorReviewQuestion") {
+    currentDoctorReviewQuestion = Math.max(0, currentDoctorReviewQuestion - 1);
+    renderDoctorReviewQuestions();
+  }
 });
 
 renderLessons();
 renderLab();
 renderQuiz();
 renderDoctorQuestions();
+renderDoctorReviewQuestions();
 renderSavedQuestions();
 renderSheet();
 renderStats();

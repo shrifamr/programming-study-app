@@ -29,6 +29,7 @@
           <button class="nav-item" data-view="lab">معمل الأمثلة</button>
           <button class="nav-item" data-view="quiz">اختبار MCQ</button>
           <button class="nav-item" data-view="doctor">أسئلة الدكتور</button>
+          <button class="nav-item" data-view="doctorReview">أسئلة مراجعة الدكتور</button>
           <button class="nav-item" data-view="wrong">أسئلة غلطت فيها</button>
           <button class="nav-item" data-view="favorites">المفضلة</button>
           <button class="nav-item" data-view="sheet">ورقة المراجعة</button>
@@ -131,6 +132,36 @@
                 <button id="prevDoctorQuestion" class="secondary-btn">السابق</button>
                 <button id="toggleDoctorFavorite" class="secondary-btn">حفظ في المفضلة</button>
                 <button id="nextDoctorQuestion" class="primary-btn">التالي</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="doctorReview">
+          <div class="quiz-shell">
+            <div class="quiz-header">
+              <div>
+                <p class="eyebrow">Doctor Review</p>
+                <h2>أسئلة مراجعة الدكتور</h2>
+              </div>
+              <div class="score-pill">
+                <span id="doctorReviewScoreText">0 / 0</span>
+                <small><span id="doctorReviewQuestionCount">0</span> سؤال</small>
+              </div>
+            </div>
+            <div class="quiz-card doctor-card">
+              <div class="quiz-meta">
+                <span id="doctorReviewQuestionNumber"></span>
+                <span id="doctorReviewTopic"></span>
+              </div>
+              <h3 id="doctorReviewQuestionText"></h3>
+              <pre id="doctorReviewQuestionCode" class="code-block hidden"></pre>
+              <div id="doctorReviewAnswers" class="answers"></div>
+              <div id="doctorReviewFeedback" class="feedback hidden"></div>
+              <div class="quiz-actions">
+                <button id="prevDoctorReviewQuestion" class="secondary-btn">السابق</button>
+                <button id="toggleDoctorReviewFavorite" class="secondary-btn">حفظ في المفضلة</button>
+                <button id="nextDoctorReviewQuestion" class="primary-btn">التالي</button>
               </div>
             </div>
           </div>
