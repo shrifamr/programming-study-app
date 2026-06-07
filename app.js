@@ -2152,8 +2152,8 @@ const doctorReviewQuestions = [
       "True",
       "False"
     ],
-    "correct": 0,
-    "explanation": "The remainder operator works with numeric operands such as integers and floats in Python."
+    "correct": 1,
+    "explanation": "The % operator works with integers and floats, but not every numeric type in Python. For example, it does not work with complex numbers."
   },
   {
     "topic": "True/False",
