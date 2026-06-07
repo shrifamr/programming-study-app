@@ -1687,6 +1687,7 @@ document.addEventListener("click", (event) => {
       wrongQuestionKeys.add(questionKey("doctor", currentDoctorQuestion));
       persistSavedQuestions();
       renderSavedQuestions();
+      activateView("wrong");
     }
     renderDoctorQuestions();
     return;
@@ -1700,6 +1701,7 @@ document.addEventListener("click", (event) => {
       wrongQuestionKeys.add(questionKey("quiz", currentQuestion));
       persistSavedQuestions();
       renderSavedQuestions();
+      activateView("wrong");
     }
     renderQuiz();
   }
@@ -1710,6 +1712,7 @@ document.addEventListener("click", (event) => {
     persistSavedQuestions();
     renderQuiz();
     renderSavedQuestions();
+    activateView("favorites");
   }
 
   if (event.target.id === "toggleDoctorFavorite") {
@@ -1718,6 +1721,7 @@ document.addEventListener("click", (event) => {
     persistSavedQuestions();
     renderDoctorQuestions();
     renderSavedQuestions();
+    activateView("favorites");
   }
 
   const openSaved = event.target.closest("[data-open-saved]");
