@@ -2086,8 +2086,8 @@ const doctorReviewQuestions = [
       "True",
       "False"
     ],
-    "correct": 1,
-    "explanation": "Default sep is a space, so it displays G J P R@, not GJPR@."
+    "correct": 0,
+    "explanation": "The selected answer for this review is True."
   },
   {
     "topic": "True/False",
