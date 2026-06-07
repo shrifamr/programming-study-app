@@ -64,7 +64,14 @@ const lessons = [
     intro: "if تختار مسار بناءً على شرط. الترتيب مهم، وأول شرط صحيح هو الذي ينفذ.",
     code: "score = 75\nif score >= 80:\n    grade = \"A\"\nelif score >= 60:\n    grade = \"B\"\nelif score >= 50:\n    grade = \"C\"\nelse:\n    grade = \"Fail\"\nprint(grade)",
     blocks: [
-      ["معاملات المقارنة", ["> أكبر من، < أصغر من.", ">= أكبر أو يساوي، <= أصغر أو يساوي.", "== مقارنة تساوي، != لا يساوي.", "= للتخزين وليس للمقارنة."]],
+      ["معاملات المقارنة", [
+        "<code class=\"inline-op\">&gt;</code> أكبر من.",
+        "<code class=\"inline-op\">&lt;</code> أصغر من.",
+        "<code class=\"inline-op\">&gt;=</code> أكبر من أو يساوي.",
+        "<code class=\"inline-op\">&lt;=</code> أصغر من أو يساوي.",
+        "<code class=\"inline-op\">==</code> مقارنة تساوي، و <code class=\"inline-op\">!=</code> لا يساوي.",
+        "<code class=\"inline-op\">=</code> للتخزين وليس للمقارنة."
+      ]],
       ["مقارنة النصوص", ["حساسة لحالة الأحرف.", "Ali لا تساوي ali.", "الحروف الكبيرة أصغر من الصغيرة حسب ASCII."]]
     ]
   },

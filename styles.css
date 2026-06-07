@@ -397,6 +397,22 @@ h2 {
   line-height: 1.8;
 }
 
+.inline-op {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-flex;
+  min-width: 34px;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+  border-radius: 6px;
+  background: #edf3f8;
+  color: var(--blue);
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 900;
+}
+
 .code-block {
   direction: ltr;
   text-align: left;
