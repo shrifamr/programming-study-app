@@ -1449,8 +1449,49 @@ let currentQuestion = 0;
 let answersState = Array(quiz.length).fill(null);
 let currentDoctorQuestion = 0;
 let doctorAnswersState = Array(doctorQuestions.length).fill(null);
+let wrongQuestionKeys = new Set(JSON.parse(localStorage.getItem("wrongQuestionKeys") || "[]"));
+let favoriteQuestionKeys = new Set(JSON.parse(localStorage.getItem("favoriteQuestionKeys") || "[]"));
 
 const $ = (selector) => document.querySelector(selector);
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function questionKey(type, index) {
+  return `${type}:${index}`;
+}
+
+function getQuestionByKey(key) {
+  const [type, rawIndex] = key.split(":");
+  const index = Number(rawIndex);
+  const bank = type === "doctor" ? doctorQuestions : quiz;
+  const question = bank[index];
+  return question ? { type, index, question } : null;
+}
+
+function persistSavedQuestions() {
+  localStorage.setItem("wrongQuestionKeys", JSON.stringify([...wrongQuestionKeys]));
+  localStorage.setItem("favoriteQuestionKeys", JSON.stringify([...favoriteQuestionKeys]));
+}
+
+function updateFavoriteButtons() {
+  const quizFavorite = $("#toggleFavorite");
+  if (quizFavorite) {
+    const saved = favoriteQuestionKeys.has(questionKey("quiz", currentQuestion));
+    quizFavorite.textContent = saved ? "إزالة من المفضلة" : "حفظ في المفضلة";
+  }
+
+  const doctorFavorite = $("#toggleDoctorFavorite");
+  if (doctorFavorite) {
+    const saved = favoriteQuestionKeys.has(questionKey("doctor", currentDoctorQuestion));
+    doctorFavorite.textContent = saved ? "إزالة من المفضلة" : "حفظ في المفضلة";
+  }
+}
 
 function renderStats() {
   $("#lessonCount").textContent = lessons.length;
@@ -1529,6 +1570,7 @@ function renderQuiz() {
   const solved = answersState.filter((answer) => answer !== null);
   const correct = solved.filter((answer, index) => answer === quiz[index].correct).length;
   $("#scoreText").textContent = `${correct} / ${solved.length}`;
+  updateFavoriteButtons();
 }
 
 function renderDoctorQuestions() {
@@ -1555,7 +1597,40 @@ function renderDoctorQuestions() {
   const solved = doctorAnswersState.filter((answer) => answer !== null);
   const correct = solved.filter((answer, index) => answer === doctorQuestions[index].correct).length;
   $("#doctorScoreText").textContent = `${correct} / ${solved.length}`;
+  updateFavoriteButtons();
 }
+
+function renderSavedQuestionList(containerSelector, keys, listType, emptyText) {
+  const container = $(containerSelector);
+  const items = [...keys].map(getQuestionByKey).filter(Boolean);
+
+  if (!items.length) {
+    container.innerHTML = `<div class="empty-state">${emptyText}</div>`;
+    return;
+  }
+
+  container.innerHTML = items.map(({ type, index, question }) => `
+    <article class="saved-card">
+      <div class="saved-meta">
+        <span>${type === "doctor" ? "أسئلة الدكتور" : "MCQ"}</span>
+        <span>${escapeHtml(question.topic)}</span>
+      </div>
+      <h3>${escapeHtml(question.question)}</h3>
+      ${question.code ? `<pre class="code-block">${escapeHtml(question.code)}</pre>` : ""}
+      <p>الإجابة الصحيحة: <strong>${escapeHtml(question.answers[question.correct])}</strong></p>
+      <div class="saved-actions">
+        <button class="secondary-btn" data-open-saved="${type}:${index}">فتح السؤال</button>
+        <button class="secondary-btn danger-btn" data-remove-${listType}="${type}:${index}">إزالة</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function renderSavedQuestions() {
+  renderSavedQuestionList("#wrongQuestionsList", wrongQuestionKeys, "wrong", "لسه مفيش أسئلة غلطت فيها.");
+  renderSavedQuestionList("#favoriteQuestionsList", favoriteQuestionKeys, "favorite", "لسه مفيش أسئلة محفوظة في المفضلة.");
+}
+
 function renderSheet() {
   $("#sheetGrid").innerHTML = sheetItems.map(([title, items]) => `
     <article class="sheet-card">
@@ -1565,13 +1640,32 @@ function renderSheet() {
   `).join("");
 }
 
+function activateView(viewId) {
+  document.querySelectorAll(".nav-item").forEach((item) => item.classList.toggle("active", item.dataset.view === viewId));
+  document.querySelectorAll(".view").forEach((view) => view.classList.toggle("active", view.id === viewId));
+}
+
+function openSavedQuestion(key) {
+  const saved = getQuestionByKey(key);
+  if (!saved) return;
+
+  if (saved.type === "doctor") {
+    currentDoctorQuestion = saved.index;
+    renderDoctorQuestions();
+    activateView("doctor");
+    return;
+  }
+
+  currentQuestion = saved.index;
+  renderQuiz();
+  activateView("quiz");
+}
+
 document.addEventListener("click", (event) => {
   const nav = event.target.closest(".nav-item");
   if (nav) {
-    document.querySelectorAll(".nav-item").forEach((item) => item.classList.remove("active"));
-    nav.classList.add("active");
-    document.querySelectorAll(".view").forEach((view) => view.classList.remove("active"));
-    $(`#${nav.dataset.view}`).classList.add("active");
+    activateView(nav.dataset.view);
+    renderSavedQuestions();
   }
 
   const lessonButton = event.target.closest(".lesson-tab");
@@ -1587,15 +1681,63 @@ document.addEventListener("click", (event) => {
 
   const doctorAnswer = event.target.closest("[data-doctor-answer]");
   if (doctorAnswer) {
-    doctorAnswersState[currentDoctorQuestion] = Number(doctorAnswer.dataset.doctorAnswer);
+    const selected = Number(doctorAnswer.dataset.doctorAnswer);
+    doctorAnswersState[currentDoctorQuestion] = selected;
+    if (selected !== doctorQuestions[currentDoctorQuestion].correct) {
+      wrongQuestionKeys.add(questionKey("doctor", currentDoctorQuestion));
+      persistSavedQuestions();
+      renderSavedQuestions();
+    }
     renderDoctorQuestions();
     return;
   }
 
   const answer = event.target.closest(".answer-btn");
   if (answer) {
-    answersState[currentQuestion] = Number(answer.dataset.answer);
+    const selected = Number(answer.dataset.answer);
+    answersState[currentQuestion] = selected;
+    if (selected !== quiz[currentQuestion].correct) {
+      wrongQuestionKeys.add(questionKey("quiz", currentQuestion));
+      persistSavedQuestions();
+      renderSavedQuestions();
+    }
     renderQuiz();
+  }
+
+  if (event.target.id === "toggleFavorite") {
+    const key = questionKey("quiz", currentQuestion);
+    favoriteQuestionKeys.has(key) ? favoriteQuestionKeys.delete(key) : favoriteQuestionKeys.add(key);
+    persistSavedQuestions();
+    renderQuiz();
+    renderSavedQuestions();
+  }
+
+  if (event.target.id === "toggleDoctorFavorite") {
+    const key = questionKey("doctor", currentDoctorQuestion);
+    favoriteQuestionKeys.has(key) ? favoriteQuestionKeys.delete(key) : favoriteQuestionKeys.add(key);
+    persistSavedQuestions();
+    renderDoctorQuestions();
+    renderSavedQuestions();
+  }
+
+  const openSaved = event.target.closest("[data-open-saved]");
+  if (openSaved) {
+    openSavedQuestion(openSaved.dataset.openSaved);
+  }
+
+  const removeWrong = event.target.closest("[data-remove-wrong]");
+  if (removeWrong) {
+    wrongQuestionKeys.delete(removeWrong.dataset.removeWrong);
+    persistSavedQuestions();
+    renderSavedQuestions();
+  }
+
+  const removeFavorite = event.target.closest("[data-remove-favorite]");
+  if (removeFavorite) {
+    favoriteQuestionKeys.delete(removeFavorite.dataset.removeFavorite);
+    persistSavedQuestions();
+    updateFavoriteButtons();
+    renderSavedQuestions();
   }
 
   if (event.target.id === "nextQuestion") {
@@ -1623,5 +1765,6 @@ renderLessons();
 renderLab();
 renderQuiz();
 renderDoctorQuestions();
+renderSavedQuestions();
 renderSheet();
 renderStats();

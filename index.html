@@ -29,6 +29,8 @@
           <button class="nav-item" data-view="lab">معمل الأمثلة</button>
           <button class="nav-item" data-view="quiz">اختبار MCQ</button>
           <button class="nav-item" data-view="doctor">أسئلة الدكتور</button>
+          <button class="nav-item" data-view="wrong">أسئلة غلطت فيها</button>
+          <button class="nav-item" data-view="favorites">المفضلة</button>
           <button class="nav-item" data-view="sheet">ورقة المراجعة</button>
         </nav>
 
@@ -97,6 +99,7 @@
               <div id="feedback" class="feedback hidden"></div>
               <div class="quiz-actions">
                 <button id="prevQuestion" class="secondary-btn">السابق</button>
+                <button id="toggleFavorite" class="secondary-btn">حفظ في المفضلة</button>
                 <button id="nextQuestion" class="primary-btn">التالي</button>
               </div>
             </div>
@@ -126,10 +129,27 @@
               <div id="doctorFeedback" class="feedback hidden"></div>
               <div class="quiz-actions">
                 <button id="prevDoctorQuestion" class="secondary-btn">السابق</button>
+                <button id="toggleDoctorFavorite" class="secondary-btn">حفظ في المفضلة</button>
                 <button id="nextDoctorQuestion" class="primary-btn">التالي</button>
               </div>
             </div>
           </div>
+        </section>
+
+        <section class="view" id="wrong">
+          <div class="section-heading">
+            <p class="eyebrow">Mistake Review</p>
+            <h2>أسئلة غلطت فيها</h2>
+          </div>
+          <div class="saved-grid" id="wrongQuestionsList"></div>
+        </section>
+
+        <section class="view" id="favorites">
+          <div class="section-heading">
+            <p class="eyebrow">Saved Questions</p>
+            <h2>المفضلة</h2>
+          </div>
+          <div class="saved-grid" id="favoriteQuestionsList"></div>
         </section>
 
         <section class="view" id="sheet">

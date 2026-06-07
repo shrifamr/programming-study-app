@@ -431,26 +431,71 @@ h2 {
 }
 
 .lab-grid,
-.sheet-grid {
+.sheet-grid,
+.saved-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
 .lab-card,
-.sheet-card {
+.sheet-card,
+.saved-card {
   padding: 18px;
 }
 
 .lab-card h3,
-.sheet-card h3 {
+.sheet-card h3,
+.saved-card h3 {
   margin-bottom: 8px;
 }
 
 .lab-card p,
-.sheet-card li {
+.sheet-card li,
+.saved-card p {
   color: var(--muted);
   line-height: 1.8;
+}
+
+.saved-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.saved-meta,
+.saved-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.saved-meta span {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #e8f0f7;
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.danger-btn {
+  color: var(--red);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 22px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.75);
+  color: var(--muted);
+  text-align: center;
+  font-weight: 800;
 }
 
 .trace {
@@ -591,7 +636,8 @@ h2 {
 
   .lesson-layout,
   .lab-grid,
-  .sheet-grid {
+  .sheet-grid,
+  .saved-grid {
     grid-template-columns: 1fr;
   }
 
@@ -678,7 +724,8 @@ h2 {
   .lesson-panel,
   .quiz-card,
   .lab-card,
-  .sheet-card {
+  .sheet-card,
+  .saved-card {
     padding: 16px;
   }
 
